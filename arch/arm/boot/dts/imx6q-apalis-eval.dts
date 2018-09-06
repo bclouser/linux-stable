@@ -187,6 +187,10 @@
 	status = "okay";
 };
 
+&ipu1_di1_disp1 {
+	remote-endpoint = <&lcd_display_in>;
+};
+
 &ldb {
 	status = "okay";
 };
