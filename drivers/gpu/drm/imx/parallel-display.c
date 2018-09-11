@@ -163,6 +163,7 @@ static int imx_pd_register(struct drm_device *drm,
 	struct drm_encoder *encoder = &imxpd->encoder;
 	int ret;
 
+	printk(KERN_WARNING "BEN SAYS: inside imx_pd_bind\n");
 	ret = imx_drm_encoder_parse_of(drm, encoder, imxpd->dev->of_node);
 	if (ret)
 		return ret;
@@ -213,6 +214,7 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
 	u32 bus_format = 0;
 	const char *fmt;
 
+	printk(KERN_WARNING "BEN SAYS: inside imx_pd_bind\n");
 	imxpd = devm_kzalloc(dev, sizeof(*imxpd), GFP_KERNEL);
 	if (!imxpd)
 		return -ENOMEM;
@@ -261,6 +263,7 @@ static void imx_pd_unbind(struct device *dev, struct device *master,
 	void *data)
 {
 	struct imx_parallel_display *imxpd = dev_get_drvdata(dev);
+	printk(KERN_WARNING "BEN SAYS: inside imx_pd_unbind\n");
 
 	if (imxpd->panel)
 		drm_panel_detach(imxpd->panel);

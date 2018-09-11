@@ -225,6 +225,7 @@ static int panel_lvds_probe(struct platform_device *pdev)
 	struct device_node *np;
 	int ret;
 
+	printk(KERN_WARNING "BEN SAYS: inside panel_lvds_probe\n");
 	lvds = devm_kzalloc(&pdev->dev, sizeof(*lvds), GFP_KERNEL);
 	if (!lvds)
 		return -ENOMEM;
